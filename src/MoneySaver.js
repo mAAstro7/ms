@@ -1,66 +1,79 @@
 import React from 'react';
-import { Field, reduxForm } from 'redux-form';
+import { connect } from 'react-redux';
+import { Field, reduxForm, formValueSelector } from 'redux-form';
 
-const MoneySaver = (props) => {
-  const { handleSubmit, pristine, reset, submitting } = props
+let MoneySaver = (props) => {
+  const { palkkaPaiva, handleSubmit, pristine, reset, submitting } = props;
+  const paivapalkanjakaja = 21.5;
+  const sivulukukerroin = 1.35;
   return (
     <form onSubmit={handleSubmit}>
-      <div>
-        <label>First Name</label>
+    <div class="moneysaver-holder">
+    <div class="section-holder">
+        <label class="info-label">Työntekijän palkka</label>
         <div>
-          <Field name="firstName" component="input" type="text" placeholder="First Name"/>
+          <Field name="tyontekijapalkka" component="input" type="text" placeholder="€€€"/>
         </div>
       </div>
-      <div>
-        <label>Last Name</label>
+      <div class="section-holder">
+        <label class="info-label">Esimiehen palkka</label>
         <div>
-          <Field name="lastName" component="input" type="text" placeholder="Last Name"/>
+          <Field name="esimiehenpalkka" component="input" type="text" placeholder="€€€"/>
         </div>
       </div>
-      <div>
-        <label>Email</label>
+      <div class="section-holder">
+        <label class="info-label">Johtotason palkka</label>
         <div>
-          <Field name="email" component="input" type="email" placeholder="Email"/>
+          <Field name="johtotasonpalkka" component="input" type="text" placeholder="€€€"/>
         </div>
       </div>
-      <div>
-        <label>Sex</label>
+      <div class="section-holder">
+        <label class="info-label">Sivukulukerroin</label>
         <div>
-          <label><Field name="sex" component="input" type="radio" value="male"/> Male</label>
-          <label><Field name="sex" component="input" type="radio" value="female"/> Female</label>
+        {sivulukukerroin}
         </div>
       </div>
-      <div>
-        <label>Favorite Color</label>
+      <div class="section-holder">
+        <label class="info-label">Päiväpalkan jakaja</label>
         <div>
-          <Field name="favoriteColor" component="select">
-            <option></option>
-            <option value="ff0000">Red</option>
-            <option value="00ff00">Green</option>
-            <option value="0000ff">Blue</option>
-          </Field>
+         {paivapalkanjakaja}
         </div>
       </div>
+
       <div>
-        <label htmlFor="employed">Employed</label>
-        <div>
-          <Field name="employed" id="employed" component="input" type="checkbox"/>
-        </div>
+      {palkkaPaiva}
       </div>
+   
+
       <div>
-        <label>Notes</label>
-        <div>
-          <Field name="notes" component="textarea"/>
-        </div>
-      </div>
-      <div>
-        <button type="submit" disabled={pristine || submitting}>Submit</button>
+        <button type="submit" disabled={pristine || submitting}>Luo PDF</button>
         <button type="button" disabled={pristine || submitting} onClick={reset}>Clear Values</button>
+      </div>
       </div>
     </form>
   )
 }
 
-export default reduxForm({
-  form: 'ms'  // a unique identifier for this form
-})(MoneySaver)
+
+MoneySaver = reduxForm({
+  form: 'selectingFormValues', // a unique identifier for this form
+})(MoneySaver);
+
+// Decorate with connect to read form values
+const selector = formValueSelector('selectingFormValues'); // <-- same as form name
+MoneySaver = connect(state => {
+  // can select values individually
+  const johtop = selector(state, 'johtotasonpalkka');
+  const esimiesp = selector(state, 'esimiehenpalkka');
+  const tyontekija = selector(state, 'tyontekijapalkka');
+  const paivapalkanjakaja = 21.5;
+  const sivulukukerroin = 1.35;
+  const palkkaPaiva = (johtop+esimiesp+tyontekija)*paivapalkanjakaja;
+
+
+  return {
+    palkkaPaiva,
+  };
+})(MoneySaver);
+
+export default MoneySaver;
