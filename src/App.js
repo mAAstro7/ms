@@ -6,9 +6,8 @@ import MS from './MoneySaver';
 class App extends Component {
   render() {
     return (
-      <MS/>
+      <MS />
     );
   }
 }
-
 export default App;
