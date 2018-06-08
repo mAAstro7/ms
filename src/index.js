@@ -9,7 +9,7 @@ const rootEl = document.getElementById("root");
 
 ReactDOM.render(
   <Provider store={store}>
-    <div style={{ padding: 15 }}>
+    <div style={{ padding: 15 }} class="save-money">
       <h2>Kustannussäästö laskuri</h2>
       <App/>    
     </div>

@@ -31,3 +31,32 @@
   float:left;
   margin-right: 20px;
 }
+
+
+.save-money {
+  margin:auto;
+  max-width: 500px;
+}
+
+.data-holder {
+  float:right;
+}
+
+.section-holder {
+  width: 100%;
+  position: relative;
+  height: 25px;
+}
+
+.data-input-holder {
+  width: 50px;
+}
+
+.section-breaker {
+  background-color: blue;
+  color: #ffffff;
+  padding: 3px;
+  margin-top: 10px;
+}
+
+

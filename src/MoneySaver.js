@@ -7,280 +7,280 @@ let MoneySaver = (props) => {
   return (
     <form onSubmit={handleSubmit}>
       <div class="moneysaver-holder">
+      <div class="section-breaker">1. Palkkataso, perustiedot</div>
         <div class="section-holder">
           <label class="info-label">Työntekijän palkka</label>
-          <div>
-            <Field name="workerpay" component="input" type="text" placeholder="€€€" />
+          <div class="data-holder">
+            <Field class="data-input-holder" name="workerpay" component="input" type="text" placeholder="€€€" />
           </div>
         </div>
         <div class="section-holder">
           <label class="info-label">Esimiehen palkka</label>
-          <div>
-            <Field name="managerpay" component="input" type="text" placeholder="€€€" />
+          <div class="data-holder">
+            <Field class="data-input-holder" name="managerpay" component="input" type="text" placeholder="€€€" />
           </div>
         </div>
         <div class="section-holder">
           <label class="info-label">Johtotason palkka</label>
-          <div>
-            <Field name="bosspay" component="input" type="text" placeholder="€€€" />
+          <div class="data-holder">
+            <Field class="data-input-holder" name="bosspay" component="input" type="text" placeholder="€€€" />
           </div>
         </div>
         <div class="section-holder">
           <label class="info-label">Sivukulukerroin</label>
-          <div>
+          <div class="data-holder">
             {firmpaymultiplier}
           </div>
         </div>
         <div class="section-holder">
           <label class="info-label">Päiväpalkan jakaja</label>
-          <div>
+          <div class="data-holder">
             {daypay}
           </div>
         </div>
-
+        <div class="section-breaker">2. Perinteisen koulutuksen kustannusarvio</div>
         <div class="section-holder">
           <label class="info-label">Koulutettavien työntekijöiden lkm</label>
-          <div>
-            <Field name="countworker" component="input" type="text" placeholder="lkm" />
+          <div class="data-holder">
+            <Field class="data-input-holder" name="countworker" component="input" type="text" placeholder="lkm" />
           </div>
         </div>
 
         <div class="section-holder">
           <label class="info-label">Koulutettavien esimiesten lkm</label>
-          <div>
-            <Field name="countmanager" component="input" type="text" placeholder="lkm" />
+          <div class="data-holder">
+            <Field class="data-input-holder" name="countmanager" component="input" type="text" placeholder="lkm" />
           </div>
         </div>
 
         <div class="section-holder">
           <label class="info-label">Koulutettavien johtotasonhenkilöiden lkm </label>
-          <div>
-            <Field name="countboss" component="input" type="text" placeholder="lkm" />
+          <div class="data-holder">
+            <Field class="data-input-holder" name="countboss" component="input" type="text" placeholder="lkm" />
           </div>
         </div>
 
         <div class="section-holder">
           <label class="info-label">Koulutuspäivien lukumäärä</label>
-          <div>
-            <Field name="daycount" component="input" type="text" placeholder="lkm" />
+          <div class="data-holder">
+            <Field class="data-input-holder" name="daycount" component="input" type="text" placeholder="lkm" />
           </div>
         </div>
-
+        <div class="section-breaker">3. Sijaitset (tarvittava määrä koulutuksen ajaksi)</div>
         <div class="section-holder">
           <label class="info-label">Työntekijät</label>
-          <div>
-            <Field name="tempworker" component="input" type="text" placeholder="lkm" />
+          <div class="data-holder">
+            <Field class="data-input-holder" name="tempworker" component="input" type="text" placeholder="lkm" />
           </div>
         </div>
 
         <div class="section-holder">
           <label class="info-label">Esimiehet</label>
-          <div>
-            <Field name="tempmanager" component="input" type="text" placeholder="lkm" />
+          <div class="data-holder">
+            <Field class="data-input-holder" name="tempmanager" component="input" type="text" placeholder="lkm" />
           </div>
         </div>
         <div class="section-holder">
           <label class="info-label">Johto</label>
-          <div>
-            <Field name="tempboss" component="input" type="text" placeholder="lkm" />
+          <div class="data-holder">
+            <Field class="data-input-holder" name="tempboss" component="input" type="text" placeholder="lkm" />
           </div>
         </div>
         <div class="section-holder">
           <label class="info-label">Sijaispäivien määrä</label>
-          <div>
-            <Field name="tempdaycount" component="input" type="text" placeholder="lkm" />
+          <div class="data-holder">
+            <Field class="data-input-holder" name="tempdaycount" component="input" type="text" placeholder="lkm" />
           </div>
         </div>
-
+        <div class="section-breaker">4. Fasiliteetit</div>
         <div class="section-holder">
           <label class="info-label">Kouluttajan palkkio</label>
-          <div>
-            <Field name="teacherpay" component="input" type="text" placeholder="€€€" />
+          <div class="data-holder">
+            <Field class="data-input-holder" name="teacherpay" component="input" type="text" placeholder="€€€" />
           </div>
         </div>
-
+        <div class="section-breaker">Kilometrikorvaus</div>
         <div class="section-holder">
           <label class="info-label">Kilometrimäärä koulutuspaikkaan</label>
-          <div>
-            <Field name="countkm" component="input" type="text" placeholder="lkm" />
+          <div class="data-holder">
+            <Field class="data-input-holder" name="countkm" component="input" type="text" placeholder="lkm" />
           </div>
         </div>
         <div class="section-holder">
           <label class="info-label">Kilometrikorvaus määrä</label>
-          <div>
-            <div>
+          <div class="data-holder">
               {kilometrikorvaus}
-            </div>
           </div>
         </div>
+        <div class="section-breaker">Yöpymiskustannukset</div>
         <div class="section-holder">
           <label class="info-label">Kuinka monelle henkilölle maksetaan</label>
-          <div>
-            <Field name="countkmrefund" component="input" type="text" placeholder="lkm" />
+          <div class="data-holder">
+            <Field class="data-input-holder" name="countkmrefund" component="input" type="text" placeholder="lkm" />
           </div>
         </div>
 
         <div class="section-holder">
           <label class="info-label">Huoneen hinta</label>
-          <div>
-            <Field name="roomcost" component="input" type="text" placeholder="€€€" />
+          <div class="data-holder">
+            <Field class="data-input-holder" name="roomcost" component="input" type="text" placeholder="€€€" />
           </div>
         </div>
         <div class="section-holder">
           <label class="info-label">Kuinka monta huonetta</label>
-          <div>
+          <div class="data-holder">
 
-            <Field name="roomcount" component="input" type="text" placeholder="lkm" />
+            <Field class="data-input-holder" name="roomcount" component="input" type="text" placeholder="lkm" />
 
           </div>
         </div>
         <div class="section-holder">
           <label class="info-label">Yöpymis vuorokaudet</label>
-          <div>
-            <Field name="countroomdays" component="input" type="text" placeholder="lkm" />
+          <div class="data-holder">
+            <Field class="data-input-holder" name="countroomdays" component="input" type="text" placeholder="lkm" />
           </div>
         </div>
-
+        <div class="section-breaker">Kokoustarjoilu</div>
 
         <div class="section-holder">
           <label class="info-label">Kokoustarjottavat, hinta/hlö</label>
-          <div>
-            <Field name="foodcost" component="input" type="text" placeholder="€€€" />
+          <div class="data-holder">
+            <Field class="data-input-holder" name="foodcost" component="input" type="text" placeholder="€€€" />
           </div>
         </div>
         <div class="section-holder">
           <label class="info-label">Kuinka monelle henkilölle maksetaan</label>
-          <div>
+          <div class="data-holder">
 
-            <Field name="foodcount" component="input" type="text" placeholder="lkm" />
+            <Field class="data-input-holder" name="foodcount" component="input" type="text" placeholder="lkm" />
 
           </div>
         </div>
         <div class="section-holder">
           <label class="info-label">Vuorokausimäärä</label>
-          <div>
-            <Field name="countfooddays" component="input" type="text" placeholder="lkm" />
+          <div class="data-holder">
+            <Field class="data-input-holder" name="countfooddays" component="input" type="text" placeholder="lkm" />
           </div>
         </div>
-
+        <div class="section-breaker">Muut mahdolliset kulut, esim tilavuokra</div>
         <div class="section-holder">
           <label class="info-label">Muut mahdolliset kustannukset</label>
-          <div>
-            <Field name="costother" component="input" type="text" placeholder="€€€" />
+          <div class="data-holder">
+            <Field class="data-input-holder" name="costother" component="input" type="text" placeholder="€€€" />
           </div>
         </div>
 
 
-
+        <div class="section-breaker">5. Skholen malli kustannusarvio</div>
         <div class="section-holder">
           <label class="info-label">Henkilöstömäärä yhteensä</label>
-          <div>
-            <div>
+          <div class="data-holder">
+
               {allppl}
-            </div>
+
           </div>
         </div>
         <div class="section-holder">
           <label class="info-label">Lisenssin hinta</label>
-          <div>
-            <div>
+          <div class="data-holder">
+       
               {skholelicens}€
-          </div>
+        
           </div>
         </div>
         <div class="section-holder">
           <label class="info-label">Hallinnon viemä työaika-arvio päivissä</label>
-          <div>
-            <Field name="countbossskholedays" component="input" type="text" placeholder="lkm" />
+          <div class="data-holder">
+            <Field class="data-input-holder" name="countbossskholedays" component="input" type="text" placeholder="lkm" />
           </div>
         </div>
 
-
+        <div class="section-breaker">6. Kustannusvertailu</div>
         <div class="section-holder">
           <label class="info-label">Palkat</label>
-          <div>
-            <div>
+          <div class="data-holder">
+      
               {salaryAll}
-            </div>
+          
           </div>
         </div>
         <div class="section-holder">
           <label class="info-label">Sijaitset</label>
-          <div>
-            <div>
+          <div class="data-holder">
+
               {salaryTemp}
-            </div>
+      
           </div>
         </div>
         <div class="section-holder">
           <label class="info-label">Kouluttajan palkkio</label>
-          <div>
-            <div>
+          <div class="data-holder">
+       
               {costTeacher}
             </div>
-          </div>
+  
         </div>
         <div class="section-holder">
           <label class="info-label">Kilometsikorvaukset</label>
-          <div>
-            <div>
+          <div class="data-holder">
+   
               {costCar}
             </div>
-          </div>
+    
         </div>
         <div class="section-holder">
           <label class="info-label">Yöpymiskustannukset</label>
-          <div>
-            <div>
+          <div class="data-holder">
+
               {costHotel}
             </div>
-          </div>
+       
         </div>
         <div class="section-holder">
           <label class="info-label">Kokoustarjoilut</label>
-          <div>
-            <div>
+          <div class="data-holder">
+     
               {costFood}
-            </div>
+     
           </div>
         </div>
         <div class="section-holder">
           <label class="info-label">Muut mahdolliset kulut yh</label>
-          <div>
-            <div>
+          <div class="data-holder">
+         
               {costother}
-            </div>
+         
           </div>
         </div>
-
+        <div class="section-breaker">Skholen malli</div>
         <div class="section-holder">
           <label class="info-label">Lisenssi hinta vuodeksi, rajaton käyttö</label>
-          <div>
-            <div>
+          <div class="data-holder">
+     
               {costSkholePay}
-            </div>
+         
           </div>
         </div>
         <div class="section-holder">
           <label class="info-label">Arvioitu palkkakustannus hallinnoinnista</label>
-          <div>
-            <div>
+          <div class="data-holder">
+       
               {costSkholeBoss}
-            </div>
+           
           </div>
         </div>
         <div class="section-holder">
           <label class="info-label">Palkat (vaikka opiskelu tehdään työaikana)</label>
-          <div>
-            <div>
+          <div class="data-holder">
+   
               {costSkholeWorkers}
-            </div>
+      
           </div>
         </div>
 
 
 
-        <div>
+        <div class="button-holders">
           <button type="submit" disabled={pristine || submitting}>Luo PDF</button>
           <button type="button" disabled={pristine || submitting} onClick={reset}>Tyhjennä</button>
         </div>
