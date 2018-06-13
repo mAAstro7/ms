@@ -14,6 +14,12 @@
   color: white;
 }
 
+#left-h2, #right-h2 {
+  float: left;
+  width: 50%;
+}
+
+
 .App-title {
   font-size: 1.5em;
 }
@@ -35,11 +41,15 @@
 
 .save-money {
   margin:auto;
-  max-width: 500px;
+  max-width: 800px;
 }
 
 .data-holder {
   float:right;
+}
+
+.skhole-saves-money {
+  color: #0034a0;
 }
 
 .section-holder {
@@ -53,10 +63,33 @@
 }
 
 .section-breaker {
-  background-color: blue;
+  background-color: #0034a0;
   color: #ffffff;
   padding: 3px;
   margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+#money-saved {
+font-weight: bold;
+}
+
+.right-side, .left-side {
+  float:left;
+  width: 48%;
+  position: relative;
+  margin-right: 2%;
+}
+
+
+@media only screen and (max-width: 700px) {
+  .right-side, .left-side {
+    float:left;
+    width: 95%;
+    position: relative;
+    margin-right: 0;
+    margin-bottom: 25px;
+  }
 }
 
 
