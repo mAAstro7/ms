@@ -208,7 +208,7 @@ let MoneySaver = (props) => {
           </div>
         </div>
         <div className="section-holder">
-          <label className="info-label">Sijaitset</label>
+          <label className="info-label">Sijaiset</label>
           <div className="data-holder">
 
               {salaryTemp}€
@@ -224,7 +224,7 @@ let MoneySaver = (props) => {
   
         </div>
         <div className="section-holder">
-          <label className="info-label">Kilometsikorvaukset</label>
+          <label className="info-label">Kilometrikorvaukset</label>
           <div className="data-holder">
    
               {costCar}€
