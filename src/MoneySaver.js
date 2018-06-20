@@ -10,7 +10,7 @@ let MoneySaver = (props) => {
 
       
       <div className="left-side">
-      <div className="section-breaker">1. Palkkataso, perustiedot</div>
+      <div className="section-breaker">1. Palkkataso/kk, perustiedot</div>
         <div className="section-holder">
           <label className="info-label">Työntekijän palkka</label>
           <div className="data-holder">
@@ -187,7 +187,7 @@ let MoneySaver = (props) => {
           <label className="info-label">Lisenssin hinta</label>
           <div className="data-holder">
        
-              {skholelicens}€
+          <Field className="data-input-holder" name="skholelicens" component="input" type="text" placeholder="€€€" />
         
           </div>
         </div>
@@ -316,7 +316,6 @@ MoneySaver = connect(state => {
   const daypay = 21.5;
   const firmpaymultiplier = 1.35;
   const kilometrikorvaus = 0.42;
-  const skholelicens = 150;
   var bosspay = parseInt(selector(state, 'bosspay'), 10);
   var managerpay = parseInt(selector(state, 'managerpay'), 10);
   var workerpay = parseInt(selector(state, 'workerpay'), 10);
@@ -350,6 +349,7 @@ MoneySaver = connect(state => {
   var tempmanager = parseInt(selector(state, 'tempmanager'), 10);
   var tempboss = parseInt(selector(state, 'tempboss'), 10);
   var tempdaycount = parseInt(selector(state, 'tempdaycount'), 10);
+  const skholelicens =  selector(state, 'skholelicens')
 
   var salaryTemp = 0;
   var salarytemphold = Math.round(((bosspay * tempboss) + (managerpay * tempmanager) + (workerpay * tempworker)) * firmpaymultiplier / daypay * tempdaycount);
