@@ -7,6 +7,7 @@ import App from './App';
 const rootEl = document.getElementById("root");
 
 ReactDOM.render(
+
   <Provider store={store}>
     <div style={{ padding: 15 }} className="save-money">
       <h2 className="skhole-saves-money" id="left-h2">Kustannussäästö laskuri</h2>

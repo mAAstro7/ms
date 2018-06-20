@@ -4,6 +4,7 @@ import { Field, reduxForm, formValueSelector } from 'redux-form';
 
 let MoneySaver = (props) => {
   const { moneysaved, costSkholePay, costSkholeBoss, costSkholeWorkers, firmpaymultiplier, kilometrikorvaus, skholelicens, daypay, costother, costFood, costHotel, costCar, costTeacher, salaryTemp, allppl, salaryAll, handleSubmit, pristine, reset, submitting } = props;
+  
   return (
     <form onSubmit={handleSubmit}>
       <div className="moneysaver-holder">
@@ -293,7 +294,7 @@ let MoneySaver = (props) => {
 
 
         <div className="button-holders">
-          <button type="submit" disabled={pristine || submitting}>Luo PDF</button>
+          <button onClick={()=> window.print()}>Printtaa</button>
           <button type="button" disabled={pristine || submitting} onClick={reset}>Tyhjennä</button>
         </div>
       </div>
@@ -306,6 +307,7 @@ let MoneySaver = (props) => {
 MoneySaver = reduxForm({
   form: 'selectingFormValues', // a unique identifier for this form
 })(MoneySaver);
+
 
 // Decorate with connect to read form values
 const selector = formValueSelector('selectingFormValues'); // <-- same as form name
